@@ -1,0 +1,35 @@
+//LISTADO ORDENADO DE EJERCICIOS PROPUESTOS EN PYTHON. 
+
+1.1 - HelloWord
+1.2 - Comentareo y print 
+1.3 - inputConsolaPadre
+1.4 - InputConsolaPadre2
+
+1.5 - OperacionesBasicas
+1.6 - OperacionesBasicas2
+1.7 - OperacionesBasicasTexto
+
+2.1 - EstructurasControlFlujo1
+2.2 - EstructurasControlFlujo2
+
+3.1 - OperadoresBInarios1
+3.2 – Carpeta – PaqueteParaElImport (init, DatosMascota, FormularioFinal)
+
+4.1 - Funciones1
+4.2 - FuncionesRecurisvidad2
+
+5.1- EjemplosBuclesDiapos
+5.2 - EjerciciosFor
+5.3 - EjerciciosWhile
+5.4 - RepasoEjerciciosForWhile 
+
+Carpeta – Menu – teléfono-Email
+6.1 - telefonoCodigo
+6.2 - ValidarTelefonoRellenar
+6.3 - RellenaValidarEmail
+6.4 –ValidarEmail
+
+7.1 – TuplasDiccionario 
+
+
+print("  :)   ")

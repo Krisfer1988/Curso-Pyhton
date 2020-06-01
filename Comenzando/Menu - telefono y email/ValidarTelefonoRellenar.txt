@@ -1,0 +1,151 @@
+//******validar telefono******
+
+#validar telefonos del tipo 
+- +0000-999-999-999-999
+- +999 999 999 999
+- 0999 999 999 999
+- 999 999 999
+
+partes del nº de telefono:  (+34(b1))-b2-b3-b4
+- b1 -> 34
+//iremos rellenando las distintas partes del numero telefonico. 
+- b2 
+- b3
+- b4
+
+#Crear funcion normalizarTelefono (telefonoAValidar)
+
+	#incializo las variables b1 a b4 
+	
+	#incializo las variables: 
+		//separadorUtilizado, posicionActual, estadoActual
+	
+	#Creamos un while para recorrer todos los caracteres del telefono a validar. 
+	while (posicionActual < cantidadDeNumeros)
+		
+		#Actualizamos caracterActual con el valor de la posicion a recorrer por el while, del telefono a validar. 
+	
+		#Operaciones/Estados 
+		
+		//si estadoActual es 1
+			si caracterActual es +
+				paso a estado 3
+			elif 
+				caracterActual es 0
+					paso a estado 2
+			elif 
+				caracterActual es una cadena alfanumerica (hacer uso funcion isdigit)
+					paso a estado 8
+					grabo b2 con caracterActual
+			else 
+				print error 
+				
+		//si estadoActual es 2
+			si caracterActual es 0
+				paso a estado 3 
+			else 
+				print error 
+
+		//si estadoActual es 3
+			si caracterActual es una cadena alfanumerica (hacer uso de funcion isdigit)
+				grabo en b1 el caracterActual
+				paso a estado 4
+		
+			else 
+				print error
+		
+		//si estadoActual es 4
+			si caracterActual es una cadena alfanumerica (hacer uso de funcion isdigit)
+				b1 =  b1 + caracterActual (machaco b1)
+				paso a estado 5 
+			elif 
+				si caracterActual es: '-'|' '|'/'
+				paso a estado 7
+				separadorUtilizado = caracterActual
+			else
+				print error 
+		
+		//si estadoActual es 5
+			si caracterActual es una cadena alfanumerica (hacer uso de funcion isdigit)
+				b1 =  b1 + caracterActual (machaco b1)
+				paso a estado 6
+			elif 
+				si caracterActual es: '-'|' '|'/'
+					paso a estado 7
+					separadorUtilizado = caracterActual
+			else
+				print error 
+	
+		//si estadoActual es 6
+			si caracterActual es una cadena alfanumerica (hacer uso de funcion isdigit)
+				b2 =  b2 + caracterActual (machaco b2)
+				paso a estado 8
+			elif 
+				si caracterActual es: '-'|' '|'/'
+					paso a estado 7
+					separadorUtilizado = caracterActual
+			else
+				print error 
+		
+		//si estadoActual es: el 7 | el 11 | el 15 | el 19
+			si caracterActual es una cadena alfanumerica (hacer uso de funcion isdigit)
+				b2 =  b2 + caracterActual (machaco b2)
+				estadoActual++
+			else
+				print error
+
+		//si estadoActual es: el 9 | el 13| el 17
+			si caracterActual es una cadena alfanumerica (hacer uso de funcion isdigit)
+					b2 =  b2 + caracterActual (machaco b2)
+					estadoActual++
+			elif
+				si caracterActual es: '-'|' '|'/'
+					si separadorUtilizado es igual a caracterActual
+						estadoActual+=2
+				else
+					print error //caracter como separador no igual
+		
+			else
+				print error
+		
+		//si estadoActual es: el 10 | el 14| el 18
+			si caracterActual es una cadena alfanumerica (hacer uso de funcion isdigit)
+					b2 =  b2 + caracterActual (machaco b2)
+					estadoActual+=2
+			elif
+				si caracterActual es: '-'|' '|'/'
+					si separadorUtilizado es igual a caracterActual
+						estadoActual++
+				else
+					print error //caracter como separador no igual
+		
+			else
+				print error
+	
+	#fin del while 
+	
+	//uso de pass en python
+	si la longitud de b2 es 9, no hacemos nada, operacion nula. 
+	else 	
+		print error numero de telf no valido. 
+	
+	#Creamos el return final para que la funcion devuelva si es valido o no. 
+	b4 = b2[6:]	 
+    b3 = b2[3:6] //caracteres desde la posicion 3 (incluida) hasta la 6 (excluida)
+    b2 = b2[0:3] //caracteres desde la posicion 0 (incluida) hasta la 3 (excluida)
+	#devolvemos formato de telefono
+    return "(+" + b1+")-"+b2+"-"+b3+"-"+b4
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

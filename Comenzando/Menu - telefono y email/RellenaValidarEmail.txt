@@ -1,0 +1,84 @@
+//******validar email******
+
+#Sigue este pseudocodigo y rellenalo para hacer las siguientes funciones: 
+-mostrarError 
+-validarEmail
+
+#Tendremos que evaluar 3 partes en un email: xxxx@bbbbb.com.net 
+ -NOMBRE: xxxx
+ -DOMINIO: bbbbb
+ -EXTENSION: com , net 
+
+//crear una funcion llamada mostrarError que nos muestre el caracter erroneo, la posicion del error y el error. 
+
+#funcion mostrarError ():
+	if 
+		print() // "error encontrado al validar email" 
+		print() // "error en el caracter: " + posicionDelError
+		print() // "caracter erroneo: " + caracter erroneo
+		print() // "problema encontrado: " + error 
+	return 
+	
+//Crear la funcion validarEmail, devolvera T o F, dependiendo de si el email es valido o no. 
+
+#funcion ValidarEmail (emailAValidar):
+
+	#Inicializacion de parametros 
+	caracterActual, posicionActual, posicionArroba, estadoActual, 
+	caracteresTotales = len(emailAValidar) //se le introduce longitud del email.
+
+	//bucle while para comprobar posiciones y estados del email a validar 
+	while (posicionActual < caracteresTotales):
+		#saber cual es el caracter actual 
+		
+		# validar caracter actual 
+		#Mirar en que estado estoy
+		//menu
+		if (estadoActual == ESTADO_NOMBRE):
+			#Estas en el nombre 
+			
+			#si caracterActual es @
+				si posicionActual es 0 
+					return llamada a funcion error 
+				else 
+					actualizo posiciones 
+					actualizo estado al siguiente 
+			#si el caracter actual no es una cadena alfanumerica (hacer uso de la funcion isalnum() para comprobar esto)
+				si caracterActual distinto de .
+					si caracterActual distinto de _
+						return llamada a funcion error 
+			
+		elif (estadoActual == ESTADO_DOMINIO):
+			#Estamos en el dominio
+			
+			#si caracterActual es . 
+				//mirar si han metido mas caracteres en el dominio, si no error. 
+				si posicionActual es posicionArroba +1 
+					return llamada funcion error 
+				else 
+					#actualizo estado al siguiente 
+			
+			#si el caracter actual no es una cadena alfanumerica (hacer uso de isalnum())
+				return llamada funcion error 
+		
+		elif (estadoActual == 2)
+		#Estamos en la extension 
+		
+			#si caracterActual es . 
+				//mirar el anterior no fuera tambien punto
+				si emailAValidar de la posiconActual - 1 es . 
+					return llamada funcion error #un dominio no puede ser vacio 
+				elif 
+					si caracter actual es una cadena alfanumerica 
+						actualizo estado a dominio 
+				elif 
+					si el caracter actual no es una cadena alfanumerica 
+						return llamada funcion error 
+			#Actualizar el estado actual si es necesario
+			#Pasar al siguiente
+			posicionActual+=1
+			
+		#fin while 
+	si estadoActual es distinto de ESTADO_EXTENSION o (emailAValidar[-1] == . )  	
+		return llamada funcion error #no se ha determinado la direccion
+	return true 
